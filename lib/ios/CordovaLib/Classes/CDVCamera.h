@@ -72,7 +72,10 @@ typedef NSUInteger CDVMediaType;
 @property (strong) NSMutableDictionary *metadata;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong) NSData* data;
-
+//===added for gkimagepicker
+@property (assign) BOOL allowEdit;
+@property (strong) NSMutableDictionary * info;
+//====
 /*
  * getPicture
  *

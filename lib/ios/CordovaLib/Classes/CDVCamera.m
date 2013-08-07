@@ -28,15 +28,15 @@
 #import <ImageIO/CGImageProperties.h>
 #import <ImageIO/CGImageDestination.h>
 #import <MobileCoreServices/UTCoreTypes.h>
-
+#import "GKImageCropViewController.h"
 #define CDV_PHOTO_PREFIX @"cdv_photo_"
 
 static NSSet* org_apache_cordova_validArrowDirections;
 
-@interface CDVCamera ()
+@interface CDVCamera ()<GKImageCropControllerDelegate>
 
 @property (readwrite, assign) BOOL hasPendingOperation;
-
+-(void)dismissPickedImage:(CDVCameraPicker*)picker;
 @end
 
 @implementation CDVCamera
@@ -90,7 +90,7 @@ static NSSet* org_apache_cordova_validArrowDirections;
         return;
     }
 
-    bool allowEdit = [[arguments objectAtIndex:7] boolValue];
+	  self.allowEdit = [[arguments objectAtIndex:7] boolValue];
     NSNumber* targetWidth = [arguments objectAtIndex:3];
     NSNumber* targetHeight = [arguments objectAtIndex:4];
     NSNumber* mediaValue = [arguments objectAtIndex:6];
@@ -113,7 +113,7 @@ static NSSet* org_apache_cordova_validArrowDirections;
 
     cameraPicker.delegate = self;
     cameraPicker.sourceType = sourceType;
-    cameraPicker.allowsEditing = allowEdit; // THIS IS ALL IT TAKES FOR CROPPING - jm
+    cameraPicker.allowsEditing = NO; // THIS IS ALL IT TAKES FOR CROPPING - jm
     cameraPicker.callbackId = callbackId;
     cameraPicker.targetSize = targetSize;
     cameraPicker.cropToSize = NO;
@@ -256,20 +256,20 @@ static NSSet* org_apache_cordova_validArrowDirections;
 
 - (void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary*)info
 {
-    CDVCameraPicker* cameraPicker = (CDVCameraPicker*)picker;
-
-    if (cameraPicker.popoverSupported && (cameraPicker.popoverController != nil)) {
-        [cameraPicker.popoverController dismissPopoverAnimated:YES];
-        cameraPicker.popoverController.delegate = nil;
-        cameraPicker.popoverController = nil;
-    } else {
-        if ([cameraPicker respondsToSelector:@selector(presentingViewController)]) {
-            [[cameraPicker presentingViewController] dismissModalViewControllerAnimated:YES];
-        } else {
-            [[cameraPicker parentViewController] dismissModalViewControllerAnimated:YES];
-        }
-    }
-
+  self.info = [NSMutableDictionary dictionaryWithDictionary:info];
+  if (self.allowEdit) {
+  	GKImageCropViewController *cropController = [[GKImageCropViewController alloc] init];
+    cropController.contentSizeForViewInPopover = picker.contentSizeForViewInPopover;
+    cropController.sourceImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    cropController.resizeableCropArea = NO;
+    cropController.cropSize = self.pickerController.targetSize;
+    cropController.delegate = self;
+    [picker pushViewController:cropController animated:YES];
+  }else{
+    [self dismissPickedImage:self.pickerController];
+  }
+}
+-(void)processPickedImage:(CDVCameraPicker*)cameraPicker didFinishPickingMediaWithInfo:(NSDictionary*)info{
     CDVPluginResult* result = nil;
 
     NSString* mediaType = [info objectForKey:UIImagePickerControllerMediaType];
@@ -364,6 +364,36 @@ static NSSet* org_apache_cordova_validArrowDirections;
     self.hasPendingOperation = NO;
     self.pickerController = nil;
 }
+-(void)dismissPickedImage:(CDVCameraPicker*)picker{
+  if (picker.popoverSupported && (picker.popoverController != nil)) {
+    [picker.popoverController dismissPopoverAnimated:YES];
+    picker.popoverController.delegate = nil;
+    picker.popoverController = nil;
+    [self processPickedImage:picker didFinishPickingMediaWithInfo:self.info];
+  } else {
+    if ([picker respondsToSelector:@selector(presentingViewController)]) {
+      [[picker presentingViewController] dismissViewControllerAnimated:YES
+                                                            completion:^{
+                                                              [self processPickedImage:picker didFinishPickingMediaWithInfo:self.info];
+                                                            }];
+    } else {
+      [[picker parentViewController] dismissViewControllerAnimated:YES
+                                                        completion:^{
+                                                          [self processPickedImage:picker didFinishPickingMediaWithInfo:self.info];
+                                                        }];
+    }
+  }
+}
+#pragma mark -
+#pragma GKImagePickerDelegate
+
+- (void)imageCropController:(GKImageCropViewController *)imageCropController didFinishWithCroppedImage:(UIImage *)croppedImage{
+  NSLog(@"%@",NSStringFromCGSize(croppedImage.size));
+  [self.info setObject:croppedImage forKey:UIImagePickerControllerEditedImage];
+  self.pickerController.allowsEditing = self.allowEdit;
+  [self dismissPickedImage:self.pickerController];
+}
+
 
 // older api calls newer didFinishPickingMediaWithInfo
 - (void)imagePickerController:(UIImagePickerController*)picker didFinishPickingImage:(UIImage*)image editingInfo:(NSDictionary*)editingInfo

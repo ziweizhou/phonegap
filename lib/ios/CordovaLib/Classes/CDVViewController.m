@@ -101,7 +101,12 @@
     [self __init];
     return self;
 }
-
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+  self = [super initWithCoder:aDecoder];
+  [self __init];
+  return self;
+}
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

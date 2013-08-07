@@ -44,6 +44,18 @@
 		30F5EBAB14CA26E700987760 /* CDVCommandDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 30F5EBA914CA26E700987760 /* CDVCommandDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3E76876D156A90EE00EB6FA3 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E76876B156A90EE00EB6FA3 /* CDVLogger.m */; };
 		3E76876F156A90EE00EB6FA3 /* CDVLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E76876C156A90EE00EB6FA3 /* CDVLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5595C07A17B1F1F4008ABB51 /* GKCropBorderView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5595C06E17B1F1F4008ABB51 /* GKCropBorderView.h */; };
+		5595C07B17B1F1F4008ABB51 /* GKCropBorderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595C06F17B1F1F4008ABB51 /* GKCropBorderView.m */; };
+		5595C07C17B1F1F4008ABB51 /* GKImageCropOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5595C07017B1F1F4008ABB51 /* GKImageCropOverlayView.h */; };
+		5595C07D17B1F1F4008ABB51 /* GKImageCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595C07117B1F1F4008ABB51 /* GKImageCropOverlayView.m */; };
+		5595C07E17B1F1F4008ABB51 /* GKImageCropView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5595C07217B1F1F4008ABB51 /* GKImageCropView.h */; };
+		5595C07F17B1F1F4008ABB51 /* GKImageCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595C07317B1F1F4008ABB51 /* GKImageCropView.m */; };
+		5595C08017B1F1F4008ABB51 /* GKImageCropViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5595C07417B1F1F4008ABB51 /* GKImageCropViewController.h */; };
+		5595C08117B1F1F4008ABB51 /* GKImageCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595C07517B1F1F4008ABB51 /* GKImageCropViewController.m */; };
+		5595C08217B1F1F4008ABB51 /* GKImagePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 5595C07617B1F1F4008ABB51 /* GKImagePicker.h */; };
+		5595C08317B1F1F4008ABB51 /* GKImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595C07717B1F1F4008ABB51 /* GKImagePicker.m */; };
+		5595C08417B1F1F4008ABB51 /* GKResizeableCropOverlayView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5595C07817B1F1F4008ABB51 /* GKResizeableCropOverlayView.h */; };
+		5595C08517B1F1F4008ABB51 /* GKResizeableCropOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5595C07917B1F1F4008ABB51 /* GKResizeableCropOverlayView.m */; };
 		68B7516E16FD18190076A8B4 /* CDVJpegHeaderWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 68B7516B16FD18190076A8B4 /* CDVJpegHeaderWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		68B7516F16FD18190076A8B4 /* CDVJpegHeaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B7516C16FD18190076A8B4 /* CDVJpegHeaderWriter.m */; };
 		68B7517016FD19F80076A8B4 /* CDVExif.h in Headers */ = {isa = PBXBuildFile; fileRef = 68B7516A16FD18190076A8B4 /* CDVExif.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -132,6 +144,18 @@
 		30F5EBA914CA26E700987760 /* CDVCommandDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVCommandDelegate.h; path = Classes/CDVCommandDelegate.h; sourceTree = "<group>"; };
 		3E76876B156A90EE00EB6FA3 /* CDVLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = Classes/CDVLogger.m; sourceTree = "<group>"; };
 		3E76876C156A90EE00EB6FA3 /* CDVLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVLogger.h; path = Classes/CDVLogger.h; sourceTree = "<group>"; };
+		5595C06E17B1F1F4008ABB51 /* GKCropBorderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCropBorderView.h; sourceTree = "<group>"; };
+		5595C06F17B1F1F4008ABB51 /* GKCropBorderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKCropBorderView.m; sourceTree = "<group>"; };
+		5595C07017B1F1F4008ABB51 /* GKImageCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropOverlayView.h; sourceTree = "<group>"; };
+		5595C07117B1F1F4008ABB51 /* GKImageCropOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropOverlayView.m; sourceTree = "<group>"; };
+		5595C07217B1F1F4008ABB51 /* GKImageCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropView.h; sourceTree = "<group>"; };
+		5595C07317B1F1F4008ABB51 /* GKImageCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropView.m; sourceTree = "<group>"; };
+		5595C07417B1F1F4008ABB51 /* GKImageCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImageCropViewController.h; sourceTree = "<group>"; };
+		5595C07517B1F1F4008ABB51 /* GKImageCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImageCropViewController.m; sourceTree = "<group>"; };
+		5595C07617B1F1F4008ABB51 /* GKImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKImagePicker.h; sourceTree = "<group>"; };
+		5595C07717B1F1F4008ABB51 /* GKImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKImagePicker.m; sourceTree = "<group>"; };
+		5595C07817B1F1F4008ABB51 /* GKResizeableCropOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKResizeableCropOverlayView.h; sourceTree = "<group>"; };
+		5595C07917B1F1F4008ABB51 /* GKResizeableCropOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKResizeableCropOverlayView.m; sourceTree = "<group>"; };
 		686357AA141002F100DF4CF2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		686357AC141002F100DF4CF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		686357AE141002F100DF4CF2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -266,6 +290,26 @@
 			name = "Other Sources";
 			sourceTree = "<group>";
 		};
+		5595C06D17B1F1F4008ABB51 /* GKClasses */ = {
+			isa = PBXGroup;
+			children = (
+				5595C06E17B1F1F4008ABB51 /* GKCropBorderView.h */,
+				5595C06F17B1F1F4008ABB51 /* GKCropBorderView.m */,
+				5595C07017B1F1F4008ABB51 /* GKImageCropOverlayView.h */,
+				5595C07117B1F1F4008ABB51 /* GKImageCropOverlayView.m */,
+				5595C07217B1F1F4008ABB51 /* GKImageCropView.h */,
+				5595C07317B1F1F4008ABB51 /* GKImageCropView.m */,
+				5595C07417B1F1F4008ABB51 /* GKImageCropViewController.h */,
+				5595C07517B1F1F4008ABB51 /* GKImageCropViewController.m */,
+				5595C07617B1F1F4008ABB51 /* GKImagePicker.h */,
+				5595C07717B1F1F4008ABB51 /* GKImagePicker.m */,
+				5595C07817B1F1F4008ABB51 /* GKResizeableCropOverlayView.h */,
+				5595C07917B1F1F4008ABB51 /* GKResizeableCropOverlayView.m */,
+			);
+			name = GKClasses;
+			path = ../../../../GKImagePicker/GKClasses;
+			sourceTree = "<group>";
+		};
 		888700D710922F56009987E8 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +405,7 @@
 		8887FD101090FB43009987E8 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5595C06D17B1F1F4008ABB51 /* GKClasses */,
 				3054098714B77FF3009841CA /* Cleaver */,
 				888700D710922F56009987E8 /* Commands */,
 				888700D910923009009987E8 /* Util */,
@@ -420,6 +465,12 @@
 				EBFF4DBD16D3FE2E008F452B /* CDVWebViewDelegate.h in Headers */,
 				EB96673B16A8970A00D86CDF /* CDVUserAgentUtil.h in Headers */,
 				7E14B5A81705050A0032169E /* CDVTimer.h in Headers */,
+				5595C07A17B1F1F4008ABB51 /* GKCropBorderView.h in Headers */,
+				5595C07C17B1F1F4008ABB51 /* GKImageCropOverlayView.h in Headers */,
+				5595C07E17B1F1F4008ABB51 /* GKImageCropView.h in Headers */,
+				5595C08017B1F1F4008ABB51 /* GKImageCropViewController.h in Headers */,
+				5595C08217B1F1F4008ABB51 /* GKImagePicker.h in Headers */,
+				5595C08417B1F1F4008ABB51 /* GKResizeableCropOverlayView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +567,12 @@
 				EBFF4DBC16D3FE2E008F452B /* CDVWebViewDelegate.m in Sources */,
 				68B7516F16FD18190076A8B4 /* CDVJpegHeaderWriter.m in Sources */,
 				7E14B5A91705050A0032169E /* CDVTimer.m in Sources */,
+				5595C07B17B1F1F4008ABB51 /* GKCropBorderView.m in Sources */,
+				5595C07D17B1F1F4008ABB51 /* GKImageCropOverlayView.m in Sources */,
+				5595C07F17B1F1F4008ABB51 /* GKImageCropView.m in Sources */,
+				5595C08117B1F1F4008ABB51 /* GKImageCropViewController.m in Sources */,
+				5595C08317B1F1F4008ABB51 /* GKImagePicker.m in Sources */,
+				5595C08517B1F1F4008ABB51 /* GKResizeableCropOverlayView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
